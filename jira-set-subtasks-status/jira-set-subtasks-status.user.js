@@ -10,11 +10,6 @@
 // @grant        none
 // ==/UserScript==
 
-//--- Enter your Jira account details below ---//
-const myJiraUserName = "YOUR_USERNAME";
-const myJiraPassword = "YOUR_PASSWORD";
-//---------------------------------------------//
-
 (function () {
     'use strict';
 
@@ -40,7 +35,6 @@ function checkSubtasksStatuses() {
     const getIssueDetailsUrl = baseGetIssueUrl + issueKey;
 
     var headers = new Headers();
-    headers.append("Authorization", "Basic " + btoa(myJiraUserName + ":" + myJiraPassword));
     headers.append("Content-Type", "application/json");
 
     const fields = 'key,summary,subtasks,status'
